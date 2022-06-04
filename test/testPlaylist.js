@@ -13,4 +13,11 @@ describe('PlayList', () => {
     assert.strictEqual(hindi.addSong(filhall), true);
     assert.strictEqual(hindi.addSong(filhall), true);
   });
+
+  it('Should give a current song\'s name', () => {
+    const rabta = { name: 'rabta.mp3', album: 'rabta' };
+    const hindi = new PlayList('hindi', [rabta]);
+
+    assert.strictEqual(hindi.playSong(), rabta);
+  });
 });
