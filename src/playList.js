@@ -26,6 +26,21 @@ class PlayList {
     this.#currentSongIndex--;
     return this.playSong();
   }
+
+  #findIndex(songsName) {
+    const allSongsName = this.#songs.map((song) => song.name);
+    return allSongsName.indexOf(songsName);
+  }
+
+  deleteSong(songName) {
+    const index = this.#findIndex(songName);
+
+    if (index !== -1) {
+      this.#songs.splice(index);
+      return true;
+    }
+    return false;
+  }
 }
 
 exports.PlayList = PlayList;

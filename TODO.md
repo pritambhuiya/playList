@@ -1,5 +1,5 @@
 # TODO
-  - [ ] Implement deleteSong feature
+  - [ ] Implement rename feature
   - [ ] Implement showPlayList feature
   - [ ] Create multiple playlists 
   - [ ] Implement addPlaylist feature 
@@ -14,6 +14,7 @@
   - [ ] Consider set instead of array because of addition of same song
 
 # DONE
+  - [x] Implement deleteSong feature
   - [x] Implement nextSong feature
   - [x] Implement prevSong feature
   - [x] Implement playSong feature
