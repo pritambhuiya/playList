@@ -1,10 +1,9 @@
 # TODO
-  - [x] Implement addSong feature
-  - [ ] Implement deleteSong feature
   - [ ] Implement playSong feature
-  - [ ] Implement pauseSong feature
   - [ ] Implement nextSong feature
   - [ ] Implement prevSong feature
+  - [ ] Implement deleteSong feature
+  - [ ] Implement pauseSong feature
   - [ ] Implement showPlayList feature
   - [ ] Create multiple playlists 
   - [ ] Implement addPlaylist feature 
@@ -15,11 +14,12 @@
 
 # MAYBE
 
-- [ ] Consider set instead of array
-- [ ] Consider richer structure for songs
-- [ ] Consider richer structure for playlists
+  - [ ] Consider set instead of array
 
 # DONE
+  - [x] Consider richer structure for songs
+  - [x] Consider richer structure for playlists
+  - [x] Implement addSong feature
   - [x] Create directory Structure
   - [x] Verify mocha exists
   - [x] Create PlayList class
