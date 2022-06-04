@@ -16,6 +16,16 @@ class PlayList {
   playSong() {
     return this.#songs[this.#currentSongIndex];
   }
+
+  nextSong() {
+    this.#currentSongIndex++;
+    return this.playSong();
+  }
+
+  prevSong() {
+    this.#currentSongIndex--;
+    return this.playSong();
+  }
 }
 
 exports.PlayList = PlayList;

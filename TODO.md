@@ -1,9 +1,5 @@
 # TODO
-  - [ ] Implement playSong feature
-  - [ ] Implement nextSong feature
-  - [ ] Implement prevSong feature
   - [ ] Implement deleteSong feature
-  - [ ] Implement pauseSong feature
   - [ ] Implement showPlayList feature
   - [ ] Create multiple playlists 
   - [ ] Implement addPlaylist feature 
@@ -13,10 +9,14 @@
 
 
 # MAYBE
-
-  - [ ] Consider set instead of array
+  - [ ] Consider implementing pauseSong feature
+  - [ ] Consider stack underFlow & overFLow condition
+  - [ ] Consider set instead of array because of addition of same song
 
 # DONE
+  - [x] Implement nextSong feature
+  - [x] Implement prevSong feature
+  - [x] Implement playSong feature
   - [x] Consider richer structure for songs
   - [x] Consider richer structure for playlists
   - [x] Implement addSong feature
