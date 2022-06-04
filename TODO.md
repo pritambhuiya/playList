@@ -1,10 +1,10 @@
 # TODO
-  - [ ] Implement add feature
-  - [ ] Implement delete feature
-  - [ ] Implement play feature
-  - [ ] Implement pause feature
-  - [ ] Implement next feature
-  - [ ] Implement prev feature
+  - [x] Implement addSong feature
+  - [ ] Implement deleteSong feature
+  - [ ] Implement playSong feature
+  - [ ] Implement pauseSong feature
+  - [ ] Implement nextSong feature
+  - [ ] Implement prevSong feature
   - [ ] Implement showPlayList feature
   - [ ] Create multiple playlists 
   - [ ] Implement addPlaylist feature 
@@ -14,6 +14,10 @@
 
 
 # MAYBE
+
+- [ ] Consider set instead of array
+- [ ] Consider richer structure for songs
+- [ ] Consider richer structure for playlists
 
 # DONE
   - [x] Create directory Structure

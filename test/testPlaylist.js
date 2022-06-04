@@ -12,4 +12,11 @@ describe('PlayList', () => {
     assert.strictEqual(hindi.equals(bengali), false);
     assert.strictEqual(hindi.equals(['rabta.mp3']), false);
   });
+
+  it('Should add a song in playList', () => {
+    const hindi = new PlayList([]);
+    assert.strictEqual(hindi.addSong('rabta.mp3'), true);
+    assert.strictEqual(hindi.addSong('filhall.mp3'), true);
+    assert.strictEqual(hindi.addSong('filhall.mp3'), false);
+  });
 });
