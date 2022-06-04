@@ -41,6 +41,16 @@ class PlayList {
     }
     return false;
   }
+
+  renameSong(songName, newName) {
+    const index = this.#findIndex(songName);
+
+    if (index !== -1) {
+      this.#songs[index].name = newName;
+      return true;
+    }
+    return false;
+  }
 }
 
 exports.PlayList = PlayList;

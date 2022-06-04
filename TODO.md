@@ -1,7 +1,7 @@
 # TODO
-  - [ ] Implement rename feature
   - [ ] Implement showPlayList feature
   - [ ] Create multiple playlists 
+  - [ ] Implement renamePlayList feature
   - [ ] Implement addPlaylist feature 
   - [ ] Implement deletePlaylist feature 
   - [ ] Implement copy songs into playlist feature
@@ -14,6 +14,7 @@
   - [ ] Consider set instead of array because of addition of same song
 
 # DONE
+  - [x] Implement renameSong feature
   - [x] Implement deleteSong feature
   - [x] Implement nextSong feature
   - [x] Implement prevSong feature

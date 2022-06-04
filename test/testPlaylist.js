@@ -46,4 +46,12 @@ describe('PlayList', () => {
     assert.strictEqual(hindi.deleteSong('rabta.mp3'), true);//match
     assert.strictEqual(hindi.deleteSong('rabta.mp3'), false);//empty playList
   });
+
+  it('Should rename a song', () => {
+    const rabta = { name: 'rabta.mp3', album: 'rabta' };
+    const hindi = new PlayList('hindi', [rabta]);
+
+    assert.strictEqual(hindi.renameSong('rabta.mp3', 'r.mp3'), true);//match
+    assert.strictEqual(hindi.renameSong('duaa.mp3', 'r.mp3'), false);//no match
+  });
 });
