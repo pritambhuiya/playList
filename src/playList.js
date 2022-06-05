@@ -9,22 +9,22 @@ class PlayList {
     this.#currentSongIndex = 0;
   }
 
-  addSong(song) {
+  add(song) {
     return this.#songs.push(song) !== 0;
   }
 
-  playSong() {
+  play() {
     return this.#songs[this.#currentSongIndex];
   }
 
-  nextSong() {
+  next() {
     this.#currentSongIndex++;
-    return this.playSong();
+    return this.play();
   }
 
-  prevSong() {
+  prev() {
     this.#currentSongIndex--;
-    return this.playSong();
+    return this.play();
   }
 
   #findIndex(songsName) {
@@ -32,7 +32,7 @@ class PlayList {
     return allSongsName.indexOf(songsName);
   }
 
-  deleteSong(songName) {
+  delete(songName) {
     const index = this.#findIndex(songName);
 
     if (index !== -1) {
@@ -42,7 +42,7 @@ class PlayList {
     return false;
   }
 
-  renameSong(songName, newName) {
+  rename(songName, newName) {
     const index = this.#findIndex(songName);
 
     if (index !== -1) {
@@ -50,6 +50,10 @@ class PlayList {
       return true;
     }
     return false;
+  }
+
+  showPlayList() {
+    return { name: this.#name, songs: this.#songs };
   }
 }
 
