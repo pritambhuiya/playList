@@ -1,10 +1,10 @@
 # TODO
+  - [ ] Implement add, delete, rename option from main
   - [ ] Create multiple playlists 
   - [ ] Implement renamePlayList feature
   - [ ] Implement addPlaylist feature 
   - [ ] Implement deletePlaylist feature 
   - [ ] Implement copy songs into playlist feature
-  - [ ] Work on file contents
 
 # MAYBE
   - [ ] Consider song as an entity
@@ -14,6 +14,11 @@
   - [ ] Consider set instead of array because of addition of same song
 
 # DONE
+  - [ ] Extract functions into musicLibrary.js
+  - [x] Work on file contents
+  - [x] Run it from command line
+  - [x] Implement fileWatcher
+  - [x] Implement eventEmitter
   - [x] Consider renaming plaSong to play ...
   - [x] Implement showPlayList feature
   - [x] Implement renameSong feature
