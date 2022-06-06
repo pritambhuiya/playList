@@ -1,6 +1,6 @@
 const { PlayList } = require('./playList.js');
 const { EventEmitter } = require('events');
-const eventEmitter = new EventEmitter();
+const commandEmitter = new EventEmitter();
 
 const fs = require('fs');
 
@@ -17,7 +17,7 @@ const getCommand = (commandsFile) => {
 
 const processCommand = (commandsFile) => {
   const [command, ...args] = getCommand(commandsFile);
-  eventEmitter.emit(command, ...args);
+  commandEmitter.emit(command, ...args);
 };
 
 const displaySongs = (songs) => {
@@ -59,13 +59,13 @@ const songsLibrary = () => {
 };
 
 const commandsLibrary = (library) => {
-  eventEmitter.on('play', () => console.log(library.play().name));
-  eventEmitter.on('next', () => console.log(library.next().name));
-  eventEmitter.on('prev', () => console.log(library.prev().name));
-  eventEmitter.on('showPlayList', () => displayPlayList(library));
-  eventEmitter.on('delete', (songsName) => deleteSong(library, songsName));
-  eventEmitter.on('add', (name, album) => addSong(library, name, album));
-  eventEmitter.on('rename', (name, newName) =>
+  commandEmitter.on('play', () => console.log(library.play().name));
+  commandEmitter.on('next', () => console.log(library.next().name));
+  commandEmitter.on('prev', () => console.log(library.prev().name));
+  commandEmitter.on('showPlayList', () => displayPlayList(library));
+  commandEmitter.on('delete', (songsName) => deleteSong(library, songsName));
+  commandEmitter.on('add', (name, album) => addSong(library, name, album));
+  commandEmitter.on('rename', (name, newName) =>
     renameSong(library, name, newName));
 };
 

@@ -12,6 +12,7 @@
   - [ ] Consider set instead of array because of addition of same song
 
 # DONE
+  - [x] Consider eventEmitter as commandEmitter
   - [x] Implement add, delete, rename option from main
   - [x] Consider stack underFlow & overFLow condition
   - [ ] Extract functions into musicLibrary.js
