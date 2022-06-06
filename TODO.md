@@ -1,5 +1,4 @@
 # TODO
-  - [ ] Implement add, delete, rename option from main
   - [ ] Create multiple playlists 
   - [ ] Implement renamePlayList feature
   - [ ] Implement addPlaylist feature 
@@ -10,10 +9,11 @@
   - [ ] Consider song as an entity
   - [ ] Consider search song option
   - [ ] Consider implementing pauseSong feature
-  - [ ] Consider stack underFlow & overFLow condition
   - [ ] Consider set instead of array because of addition of same song
 
 # DONE
+  - [x] Implement add, delete, rename option from main
+  - [x] Consider stack underFlow & overFLow condition
   - [ ] Extract functions into musicLibrary.js
   - [x] Work on file contents
   - [x] Run it from command line

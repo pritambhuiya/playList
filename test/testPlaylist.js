@@ -6,12 +6,9 @@ describe('PlayList', () => {
 
   it('Should add a song in playList', () => {
     const hindi = new PlayList('hindi', []);
-    const rabta = { name: 'rabta.mp3', album: 'rabta' };
-    const filhall = { name: 'filhall.mp3', album: 'filhall' };
-
-    assert.strictEqual(hindi.add(rabta), true);
-    assert.strictEqual(hindi.add(filhall), true);
-    assert.strictEqual(hindi.add(filhall), true);
+    assert.strictEqual(hindi.add('rabta', 'rabta'), true);
+    assert.strictEqual(hindi.add('filhall', 'filhall'), true);
+    assert.strictEqual(hindi.add('filhall', 'filhall'), true);
   });
 
   it('Should give current song', () => {
@@ -27,6 +24,7 @@ describe('PlayList', () => {
     const hindi = new PlayList('hindi', [rabta, filhall]);
 
     assert.strictEqual(hindi.next(), filhall);
+    assert.strictEqual(hindi.next(), rabta);//index set to first
   });
 
   it('Should give previous song', () => {
@@ -34,7 +32,7 @@ describe('PlayList', () => {
     const filhall = { name: 'filhall.mp3', album: 'filhall' };
     const hindi = new PlayList('hindi', [rabta, filhall]);
 
-    hindi.next();
+    assert.strictEqual(hindi.prev(), filhall);//index set to last
     assert.strictEqual(hindi.prev(), rabta);
   });
 
@@ -42,17 +40,17 @@ describe('PlayList', () => {
     const rabta = { name: 'rabta.mp3', album: 'rabta' };
     const hindi = new PlayList('hindi', [rabta]);
 
-    assert.strictEqual(hindi.delete('duaa.mp3'), false);//no match
-    assert.strictEqual(hindi.delete('rabta.mp3'), true);//match
-    assert.strictEqual(hindi.delete('rabta.mp3'), false);//empty playList
+    assert.strictEqual(hindi.delete('duaa'), false);//no match
+    assert.strictEqual(hindi.delete('rabta'), true);//match
+    assert.strictEqual(hindi.delete('rabta'), false);//empty playList
   });
 
   it('Should rename a song', () => {
     const rabta = { name: 'rabta.mp3', album: 'rabta' };
     const hindi = new PlayList('hindi', [rabta]);
 
-    assert.strictEqual(hindi.rename('rabta.mp3', 'r.mp3'), true);//match
-    assert.strictEqual(hindi.rename('duaa.mp3', 'r.mp3'), false);//no match
+    assert.strictEqual(hindi.rename('rabta', 'r'), true);//match
+    assert.strictEqual(hindi.rename('duaa', 'r'), false);//no match
   });
 
   it('Should display playlist', () => {
