@@ -36,6 +36,7 @@ const displayPlayList = (library) => {
 const deleteSong = (library, songsName) => {
   const status = library.delete(songsName);
   const message = status ? 'deleted' : 'not found';
+
   console.log(songsName, message);
 };
 
@@ -51,24 +52,27 @@ const renameSong = (library, name, newName) => {
   console.log(message);
 };
 
-const songsLibrary = () => {
+const playList = () => {
   const rabta = { name: 'rabta.mp3', album: 'rabta' };
   const filhall = { name: 'filhall.mp3', album: 'filhall' };
   const duaa = { name: 'duaa.mp3', album: 'shanghai' };
+
   return new PlayList('hindi', [rabta, filhall, duaa]);
 };
 
-const commandsLibrary = (library) => {
+const registerActions = (library) => {
   commandEmitter.on('play', () => console.log(library.play().name));
   commandEmitter.on('next', () => console.log(library.next().name));
   commandEmitter.on('prev', () => console.log(library.prev().name));
+
   commandEmitter.on('showPlayList', () => displayPlayList(library));
   commandEmitter.on('delete', (songsName) => deleteSong(library, songsName));
   commandEmitter.on('add', (name, album) => addSong(library, name, album));
+
   commandEmitter.on('rename', (name, newName) =>
     renameSong(library, name, newName));
 };
 
-exports.songsLibrary = songsLibrary;
-exports.commandsLibrary = commandsLibrary;
+exports.playList = playList;
+exports.registerActions = registerActions;
 exports.processCommand = processCommand;
