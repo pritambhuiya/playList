@@ -37,19 +37,19 @@ const deleteSong = (library, songsName) => {
   const status = library.delete(songsName);
   const message = status ? 'deleted' : 'not found';
 
-  console.log(songsName, message);
+  console.log('\n', songsName, message);
 };
 
 const addSong = (library, name, album) => {
   library.add(name, album);
-  console.log('Added', name, 'from', album);
+  console.log('\nAdded', name, 'from', album);
 };
 
 const renameSong = (library, name, newName) => {
   const status = library.rename(name, newName);
   const message = status ?
     `Renamed ${name} to ${newName}` : `${name} not found`;
-  console.log(message);
+  console.log('\n', message);
 };
 
 const playList = () => {
@@ -58,6 +58,17 @@ const playList = () => {
   const duaa = { name: 'duaa.mp3', album: 'shanghai' };
 
   return new PlayList('hindi', [rabta, filhall, duaa]);
+};
+
+const showUsage = () => {
+  return ['play => to play song',
+    'next => to play next song',
+    'prev => to play prev song',
+    'showPlayList => to see playList',
+    'delete songsName => to delete the song',
+    'add songsName albumName => to add the song',
+    'rename oldName newName => to rename the song',
+    'help => to show the usage'].join('\n');
 };
 
 const registerActions = (library) => {
@@ -71,6 +82,7 @@ const registerActions = (library) => {
 
   commandEmitter.on('rename', (name, newName) =>
     renameSong(library, name, newName));
+  commandEmitter.on('help', () => console.log(showUsage()));
 };
 
 exports.playList = playList;
